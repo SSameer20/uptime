@@ -22,7 +22,8 @@ model Website {
   id        String   @id @default(uuid())
   url       String   @unique
   userId    String
-  tick      WebsiteTick[]
+  ticks      WebsiteTick[]
+  disabled  Boolean  @default(false)
 }
 
 model Validator {
@@ -30,7 +31,7 @@ model Validator {
   publicKey String   @unique
   location  String
   ip        String
-  tick      WebsiteTick[]
+  ticks      WebsiteTick[]
 }
 
 model WebsiteTick{
